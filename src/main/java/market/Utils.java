@@ -23,6 +23,10 @@ public class Utils {
 	private static String totalLabel = "Total:         ";
 	private static String noOffersLabel = "(No offers available)";
 
+	private Utils() {
+		throw new IllegalAccessError("Utility class");
+	}
+
 	public static void generateOfferLineToRecipe(Item item, StringBuilder builder, int lineNumber) {
 		int start = lineNumber * 30;
 		builder.append(spaces30);

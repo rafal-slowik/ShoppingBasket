@@ -59,7 +59,7 @@ public class BuyNGetMPercentDiscountForY extends BuyNEqualItems {
 		if (countOfBoughtItems < buy || countDiscountedItems == 0) {
 			return;
 		}
-		int discountedItemsToUpdate = Math.min((countOfBoughtItems / buy), countDiscountedItems);
+		int discountedItemsToUpdate = Math.min(countOfBoughtItems / buy, countDiscountedItems);
 		int toUpdate = discountedItemsToUpdate * buy;
 		listToOperate.stream().filter(it -> it.getId() == itemId).collect(Collectors.toCollection(ArrayList::new))
 				.subList(0, toUpdate).forEach(it -> it.setUsedFlag(true));

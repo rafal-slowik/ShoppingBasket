@@ -3,7 +3,6 @@
  */
 package market;
 
-import static market.item.ItemProducer.createItemByTypeName;
 import static market.property.ConfigProperties.getConfigInstance;
 
 import java.math.BigDecimal;
@@ -16,6 +15,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Collectors;
 
 import market.item.Item;
+import market.item.ItemProducer;
 import market.rule.IPriceRule;
 import market.rule.impl.BuyNGetMPercentDiscount;
 import market.rule.impl.BuyNGetMPercentDiscountForY;
@@ -34,7 +34,7 @@ public class PriceBasket {
 
 	public PriceBasket(String[] items) {
 		this();
-		basket.addAll(Arrays.stream(Optional.ofNullable(items).orElse(new String[0])).map(s -> createItemByTypeName(s))
+		basket.addAll(Arrays.stream(Optional.ofNullable(items).orElse(new String[0])).map(ItemProducer::createItemByTypeName)
 				.collect(Collectors.toCollection(ArrayList::new)));
 	}
 
