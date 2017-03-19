@@ -53,7 +53,7 @@ public class BuyNGetMPercentDiscountForY extends BuyNEqualItems {
 	 */
 	@Override
 	public void processFilteredItems(List<Item> filteredItems) {
-		List<Item> listToOperate = Optional.of(filteredItems).orElse(new ArrayList<>());
+		List<Item> listToOperate = Optional.ofNullable(filteredItems).orElse(new ArrayList<>());
 		int countOfBoughtItems = (int) listToOperate.stream().filter(it -> it.getId() == itemId).count();
 		int countDiscountedItems = (int) listToOperate.stream().filter(it -> it.getId() == discountItemId).count();
 		if (countOfBoughtItems < buy || countDiscountedItems == 0) {

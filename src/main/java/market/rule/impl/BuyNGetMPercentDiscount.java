@@ -36,7 +36,7 @@ public class BuyNGetMPercentDiscount extends BuyNEqualItems {
 	 */
 	@Override
 	public void processFilteredItems(List<Item> filteredItems) {
-		List<Item> listToOperate = Optional.of(filteredItems).orElse(new ArrayList<>());
+		List<Item> listToOperate = Optional.ofNullable(filteredItems).orElse(new ArrayList<>());
 		listToOperate.subList(0, (listToOperate.size() / buy) * buy).stream().forEach(item -> {
 			item.setUsedFlag(true);
 			item.setRealPrice(item.getNormalPrice().multiply(BigDecimal.valueOf((100 - precentDiscount) / 100d)));
