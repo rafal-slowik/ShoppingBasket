@@ -1,0 +1,12 @@
+usage in command line (executable jar):
+java -jar PriceBasket.jar Apples Bread Apples Bread Soup Soup milk
+
+following output should be produced:
+
+Subtotal:      £6.20
+-----------------------------
+Apples         10% off: -£0.1
+Apples         10% off: -£0.1
+Bread          50% off: -£0.4
+-----------------------------
+Total:         £5.60
