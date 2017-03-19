@@ -4,6 +4,8 @@ To implementation used JDK 8.<BR><BR>
 To check out the project use following command: <br />
 <b>git clone https://github.com/rafal-slowik/ShoppingBasket.git</b>
 <br /><br />
+<p><font size="3" color="red">Important: Each item in the basket can be taken as a part of special price rule ONLY once.</font></p>
+
 In order to build, run the tests and create docs the following Maven command should be performed:<br />
 <b>mvn clean install site</b><br/><br/>
 
